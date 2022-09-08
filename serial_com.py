@@ -39,9 +39,9 @@ while True:
     
     value=struct.unpack_from("HHHH",val)
     print(value)
-    if value[3]==60:
+    if value[3]==25:
         print(value[0:3])
-    elif value[3]==59:
+    elif value[3]==55:
         print(value[0:3])
     # if value[2]==
     else:
