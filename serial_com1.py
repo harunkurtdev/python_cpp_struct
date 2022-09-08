@@ -48,7 +48,10 @@ except IOError: # if port is already opened, close it and open it again and prin
 while True:
     val=ser.readline()
     # print(val)
-    
+    # https://docs.python.org/3/library/struct.html#format-characters
+    """
+    page is our c/cpp struct valuable datas
+    """
     value=struct.unpack_from("HHHH",val)
     # print(value)
     if value[3]==25:
