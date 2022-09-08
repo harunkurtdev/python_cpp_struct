@@ -23,20 +23,25 @@ except IOError: # if port is already opened, close it and open it again and prin
 #   int y;
 # }Point;
 # typedef struct{
+#    // arrangment is important our value list
   
-#    int16_t val;
-#    int16_t other_val;
-#    int16_t other_val2;  
-#    uint16_t checksum;
-
 #     struct structVal{
 #     int x;
 #     int y;
 #   };
- 
+   
+#    int16_t val;
+#    int16_t other_val;
+#    int16_t other_val2;  
 #     Point point;
 #     structVal stcVal;
+#    // checksum is bellow must be
+#    uint16_t checksum;
+
+ 
 # } SerialCommand;
+
+# serial_com2Arduino2
 
 while True:
     val=ser.readline()
@@ -45,16 +50,13 @@ while True:
     """
     page is our c/cpp struct valuable datas
     """
-    value=struct.unpack_from("HHHH",val)
-    # print(value)
-    if value[3]==25:
+    value=struct.unpack_from("HHHHHHHH",val)
+    print(value) # read value
+    print(value[7])
+    
+    if value[7]==55:
         print(value[0:3])
-    elif value[3]==55:
-        print(value[0:3])
-    # if value[2]==
     else:
         print("not true val")
-        # print(value[0:3])
-    # print(value)
 
 ser.close()
