@@ -33,6 +33,18 @@ except IOError: # if port is already opened, close it and open it again and prin
   ser.open()
   print ("port was already open, was closed and opened again!")
 
+
+# typedef struct{
+  
+#    int16_t val;
+#    int16_t other_val;
+#    int16_t other_val2;
+   
+#    uint16_t checksum;
+   
+#    //int16_t a;
+# } SerialCommand2;
+
 while True:
     val=ser.readline()
     # print(val)
