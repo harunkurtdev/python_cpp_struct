@@ -44,12 +44,12 @@ void loop() {
   //Command.a=(int16_t)"Hello World";
   //Command.checksum = (uint16_t)(Command.val^ Command.other_val ^ Command.other_val2);
   Command.checksum=(uint16_t)Sensor1;
-  Command2.val=(int16_t)15;
+  Command2.val=(int16_t)30;
   Command2.other_val=(int16_t)42;
-  Command2.other_val2=(int16_t)25;
+  Command2.other_val2=(int16_t)50;
   //Command.a=(int16_t)"Hello World";
   //Command2.checksum = (uint16_t)(Command2.val^ Command2.other_val ^ Command2.other_val2);
-  Command.checksum=(uint16_t)Sensor2;
+  Command2.checksum=(uint16_t)Sensor2;
   
   Serial.write((uint8_t *) &Command, sizeof(Command));
   Serial.println();

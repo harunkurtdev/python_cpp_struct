@@ -38,15 +38,15 @@ while True:
     # print(val)
     
     value=struct.unpack_from("HHHH",val)
-    print(value)
+    # print(value)
     if value[3]==25:
         print(value[0:3])
     elif value[3]==55:
         print(value[0:3])
     # if value[2]==
     else:
-        
-        print(value[0:3])
+        print("not true val")
+        # print(value[0:3])
     # print(value)
 
 ser.close()
